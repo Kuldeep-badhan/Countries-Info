@@ -1,0 +1,25 @@
+.countries {
+    display: flex;  
+    gap: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    >   .country__loading {
+        height: 80vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+        font-size: 2rem;
+        font-weight: 900;
+    }
+}
+
+
+
+@media screen and (max-width:375px) {
+
+.countries {
+    justify-content: center;
+}
+
+}

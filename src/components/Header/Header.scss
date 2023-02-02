@@ -1,0 +1,42 @@
+
+.header {
+    display: flex;
+    height: 70px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(236, 230, 230);
+    > h3 {
+        margin-left: 4rem;
+        font-size: 1.5rem;
+    }
+    > .dark_mode {
+        margin-right: 4rem;
+        > i {
+            font-size: 1.2rem;
+        }
+        > span {
+            margin-left: 1rem;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@media screen and (max-width:375px) {
+    .header {
+
+        h3 {
+            margin-left: 1rem;
+            font-size: 1.2rem;
+        }
+        .dark_mode{
+            margin-right: 1rem;
+            i{
+                font-size: 1rem;
+
+            }
+            span {
+                font-size: 1rem;
+            }
+        }
+    }
+}
