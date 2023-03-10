@@ -39,7 +39,7 @@ const Country = () => {
     setTimeout(() => {
       fetchFlag();
     }, 1000);
-  }, [flag]);
+  }, [flag, name]);
   return (
     <div className="country">
       {loading ? (
@@ -52,49 +52,55 @@ const Country = () => {
                 {" "}
                 <button className="back__btn">Back</button>
               </Link>
-              <img src={image} alt={country.name.official + " flag"} />
-              {/* <div className="country__data--left">image</div> */}
-              <div className="country__data--right">
-                <h2>{country.name.official}</h2>
-                <div className="country__details">
-                  <div className="country__details--left">
-                    <ul>
-                      <li>
-                        Navtive Name:{" "}
-                        {
-                          country.name.nativeName[
-                            Object.keys(country.name.nativeName)[0]
-                          ].official
-                        }{" "}
-                      </li>
-                      <li>Population: {country.population} </li>
-                      <li>Region: {country.region}</li>
-                      <li>Sub Region: {country.subregion}</li>
-                      <li>Capital: {country.capital}</li>
-                    </ul>
-                  </div>
-                  <div className="country__details--right">
-                    <ul>
-                      <li>Top Level Domain: {country.tld} </li>
-                      <li>
-                        Currencies:
-                        <span>
-                          {" "}
+              <div className="country__data--info">
+                <img src={image} alt={country.name.official + " flag"} />
+                {/* <div className="country__data--left">image</div> */}
+                <div className="country__data--right">
+                  <h2>{country.name.official}</h2>
+                  <div className="country__details">
+                    <div className="country__details--left">
+                      <ul>
+                        <li>
+                          Navtive Name:{" "}
                           {
-                            country.currencies[
-                              Object.keys(country.currencies)[0]
-                            ].name
+                            country.name.nativeName[
+                              Object.keys(country.name.nativeName)[0]
+                            ].official
                           }{" "}
-                        </span>
-                      </li>
-                      <li>
-                        Language:{" "}
-                        <span>
-                          {" "}
-                          {country.languages[Object.keys(country.languages)[0]]}
-                        </span>
-                      </li>
-                    </ul>
+                        </li>
+                        <li>Population: {country.population} </li>
+                        <li>Region: {country.region}</li>
+                        <li>Sub Region: {country.subregion}</li>
+                        <li>Capital: {country.capital}</li>
+                      </ul>
+                    </div>
+                    <div className="country__details--right">
+                      <ul>
+                        <li>Top Level Domain: {country.tld} </li>
+                        <li>
+                          Currencies:
+                          <span>
+                            {" "}
+                            {
+                              country.currencies[
+                                Object.keys(country.currencies)[0]
+                              ].name
+                            }{" "}
+                          </span>
+                        </li>
+                        <li>
+                          Language:{" "}
+                          <span>
+                            {" "}
+                            {
+                              country.languages[
+                                Object.keys(country.languages)[0]
+                              ]
+                            }
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>

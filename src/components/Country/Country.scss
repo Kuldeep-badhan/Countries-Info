@@ -1,110 +1,112 @@
+@mixin for-mobile-up() {
+  @media screen and (max-width: 375px) {
+    @content;
+  }
+}
 
-    .country__loading {
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;    
-        font-size: 2rem;
-        font-weight: 900;
+.country__loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 900;
+}
+.country__data {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 1rem;
+  justify-content: center;
+  a {
+    .back__btn {
+      margin-left: 2rem;
+      padding: 0.6rem 1.5rem;
+      text-decoration: none;
     }
-.country__data{
-    height: 90vh;
+  }
+
+  .country__data--info {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    position: relative;
-    a {
-    .back__btn {
-        position: absolute;
-        top: 50px;
-        left: 150px;
-        padding: 0.6rem 1.5rem;
-       
-            text-decoration: none;
 
-        }
-    }
     > img {
-        height: 300px;
-        width: 500px;
+      height: 300px;
+      width: 500px;
     }
-    &--right{
-        h2 {
-            margin-bottom: 1rem;
-        }
+    &--right {
+      h2 {
+        margin-bottom: 1rem;
+      }
     }
     .country__details {
-        display: flex;
-        gap: 1rem;
-        &--left{
-            ul {
-                list-style:none;
-                > li {
-                    margin-block:0.8rem;
-                }
-            }
+      display: flex;
+      gap: 1rem;
+      &--left {
+        ul {
+          list-style: none;
+          > li {
+            margin-block: 0.8rem;
+          }
         }
-        &--right{
-            ul {
-                list-style:none;
-                > li {
-                    margin-block:0.8rem;
-                }
-            }
+      }
+      &--right {
+        ul {
+          list-style: none;
+          > li {
+            margin-block: 0.8rem;
+          }
         }
+      }
     }
+  }
 }
 
-@media screen and (max-width:700px) {
-    .country__data{
-        flex-direction: column;
-        height: 110vh;
-        a {
-            .back__btn {
-                position: absolute;
-                top: 30px;
-                left: 70px;
-                padding: 0.3rem 0.9rem;
-                    text-decoration: none;
-                    color: black;
-        
-                }
-            }
+@media screen and (max-width: 1000px) {
+  .country__data {
+    height: 140vh;
+    gap: 2rem;
+    justify-content: center;
+    .country__data--info {
+      flex-direction: column;
     }
+  }
 }
 
-@media screen and (max-width:375px) {
-    .country__data{
-        flex-direction: column;
-        height: 130vh;
-        align-items: center;
-        padding:2rem;
-        a {
-            .back__btn {
-                position: absolute;
-                top: 10px;
-                left: 20px;
-                padding: 0.3rem 0.9rem;
-                    text-decoration: none;
-                    color: black;
-        
-                }
-            }
-            img {
-               max-width: 300px;
-                height: 200px;
-                object-fit: contain;
-            }
-            &--right{
-                h2 {
-                    font-size: 1.3rem;
-                }
-            }
-            .country__details {
-                flex-direction: column;
-                
-            }
+@media screen and (max-width: 525px) {
+  .country__data {
+    gap: 3rem;
+    align-items: center;
+    a {
+      .back__btn {
+        margin-left: 1rem;
+      }
+      align-self: start;
     }
-
+    .country__data--info {
+      flex-direction: column;
+      height: auto;
+      align-items: start;
+      img {
+        max-width: 350px;
+        height: 200px;
+        object-fit: contain;
+        @include for-mobile-up() {
+          max-width: 300px;
+          height: 200px;
+        }
+      }
+      &--right {
+        h2 {
+          font-size: 1.3rem;
+        }
+      }
+      .country__details {
+        flex-direction: column;
+      }
+    }
+  }
 }
