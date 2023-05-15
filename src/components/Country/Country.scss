@@ -67,8 +67,8 @@
 
 @media screen and (max-width: 1000px) {
   .country__data {
-    height: 140vh;
-    gap: 2rem;
+    height: 800px;
+    gap: 4rem;
     justify-content: center;
     .country__data--info {
       flex-direction: column;
@@ -79,7 +79,8 @@
 @media screen and (max-width: 525px) {
   .country__data {
     gap: 3rem;
-    align-items: center;
+    height: fit-content;
+    margin-top: 3rem;
     a {
       .back__btn {
         margin-left: 1rem;

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useState } from "react";
 
 import "./Header.scss";
 const Header = ({ currentTheme, modeSwitcher, darkMode }) => {
