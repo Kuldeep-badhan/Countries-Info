@@ -18,7 +18,7 @@ function App() {
   function currentTheme() {
     if (darkMode) {
       setTheme("app__light");
-    localStorage.setItem("theme", "app__light");
+    localStorage.setItem("theme", "app__light" );
 
       console.log("inside current theme l", theme);
     } else {
